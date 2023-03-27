@@ -2,7 +2,6 @@ package io.github.brunoonofre64.mscreditappraiser.infra.utils;
 
 import io.github.brunoonofre64.mscreditappraiser.domain.dto.cards.CardsOutputDTO;
 import io.github.brunoonofre64.mscreditappraiser.domain.dto.customer.CustomerOutputDTO;
-import io.github.brunoonofre64.mscreditappraiser.domain.dto.evaluation.DataForEvaluationDTO;
 import io.github.brunoonofre64.mscreditappraiser.domain.enums.ErrorMessage;
 import io.github.brunoonofre64.mscreditappraiser.domain.exception.BusinesRuleException;
 import io.github.brunoonofre64.mscreditappraiser.domain.utils.LimitApprovedForCustomer;

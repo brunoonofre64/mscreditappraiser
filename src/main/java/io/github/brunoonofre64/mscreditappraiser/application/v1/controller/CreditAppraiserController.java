@@ -1,10 +1,13 @@
 package io.github.brunoonofre64.mscreditappraiser.application.v1.controller;
 
+import io.github.brunoonofre64.mscreditappraiser.domain.dto.cards.DataRequestedIssuanceCardDTO;
+import io.github.brunoonofre64.mscreditappraiser.domain.dto.cards.RequestCardProtocolDTO;
 import io.github.brunoonofre64.mscreditappraiser.domain.dto.customer.CustomerSituationDTO;
 import io.github.brunoonofre64.mscreditappraiser.domain.dto.evaluation.DataForEvaluationDTO;
 import io.github.brunoonofre64.mscreditappraiser.domain.dto.evaluation.ReturnCustomerEvaluationDTO;
 import io.github.brunoonofre64.mscreditappraiser.domain.exception.CustomerDataNotFoundException;
 import io.github.brunoonofre64.mscreditappraiser.domain.exception.ErrorMicroserviceComunicationException;
+import io.github.brunoonofre64.mscreditappraiser.domain.exception.ErrorRequestCardException;
 import io.github.brunoonofre64.mscreditappraiser.domain.service.CreditAppraiserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -31,5 +34,13 @@ public class CreditAppraiserController {
             throws ErrorMicroserviceComunicationException, CustomerDataNotFoundException {
 
         return service.performCreditEvaluation(dataEvaluation);
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping
+    public RequestCardProtocolDTO requestIssuanceCard(@RequestBody DataRequestedIssuanceCardDTO data)
+            throws ErrorRequestCardException {
+
+        return service.requestIssuanceCard(data);
     }
 }
