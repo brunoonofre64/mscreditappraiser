@@ -37,7 +37,7 @@ public class CreditAppraiserController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping
+    @PostMapping("/request-card")
     public RequestCardProtocolDTO requestIssuanceCard(@RequestBody DataRequestedIssuanceCardDTO data)
             throws ErrorRequestCardException {
 
